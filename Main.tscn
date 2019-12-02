@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Map.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 230, 0, 0, 0, 0, 0, 20, 0 )
+}
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+Item = ExtResource( 2 )
+
+[node name="Map" parent="." instance=ExtResource( 3 )]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 90, 350 )
+
+[node name="ItemPath" type="Path2D" parent="."]
+position = Vector2( 300, 50 )
+curve = SubResource( 1 )
+
+[node name="ItemSpawnLocation" type="PathFollow2D" parent="ItemPath"]
+
+[node name="ItemSpawnTimer" type="Timer" parent="."]
+[connection signal="timeout" from="ItemSpawnTimer" to="." method="_on_ItemSpawnTimer_timeout"]
