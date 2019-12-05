@@ -4,14 +4,17 @@
 
 [node name="Background" type="ParallaxBackground"]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.27451, 0.27451, 0.27451, 1 )
+
 [node name="Base" type="Node2D" parent="."]
 
 [node name="Sky" type="ColorRect" parent="Base"]
 margin_right = 1030.0
 margin_bottom = 380.0
-color = Color( 0.588235, 0.960784, 1, 1 )
+color = Color( 0.792157, 0.588235, 1, 1 )
 
-[node name="ColorRect" type="ColorRect" parent="Base"]
+[node name="Ground" type="ColorRect" parent="Base"]
 margin_top = 378.0
 margin_right = 1030.0
 margin_bottom = 610.0

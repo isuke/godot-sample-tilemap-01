@@ -4,11 +4,15 @@
 
 [node name="Foreground" type="ParallaxBackground"]
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.27451, 0.27451, 0.27451, 1 )
+
 [node name="Clouds" type="ParallaxLayer" parent="."]
 position = Vector2( -330, 0 )
 motion_scale = Vector2( 0.3, 1 )
 
 [node name="Sprite0" type="Sprite" parent="Clouds"]
+visible = false
 position = Vector2( 76.125, 45.375 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 1 )
